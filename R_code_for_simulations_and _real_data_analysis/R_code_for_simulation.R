@@ -4,7 +4,7 @@ Sim_ms<-function(Q){
   n <- 100  # sample size
   p <- 1000 # the dimension of mediators
   q <- 2 # the number of covariates
-  family <- "gaussian"  # the type of model
+  family <- "gaussian"  # the type of model or 
   # the regression coefficients A (X --> M)
   A<-rep(0,p)
   # the regression coefficients B (M --> Y)
@@ -17,14 +17,14 @@ Sim_ms<-function(Q){
   rhoM<-0.0 #the correlation coefficient of random errors for M
   # Generate simulation data
   dat = simL0hima(n,p,q,family,A,B,rhoM,seed=1e3+Q)
-  L0hma.fit<-L0hima(dat$X, dat$M, dat$Y, dat$Z, dat$Z, family, test.type="JS-uniform",test.control="FDR", sig.level=0.05 )
-  L0hma.fit
+  L0hima.fit<-L0hima(dat$X, dat$M, dat$Y, dat$Z, dat$Z, family, test.type="JS-uniform",test.control="FDR", sig.level=0.05 )
+  L0hima.fit
   ID_true<-as.numeric((A*B)!=0)
   ID_ms_L0<-rep(0,p)
   me_est<-rep(0,p)
-  if(nrow(L0hma.fit)!=0){
-    ID_ms_L0[L0hma.fit[,1]]=1
-    me_est[L0hma.fit[,1]]=L0hma.fit[,2]*L0hma.fit[,3]
+  if(nrow(L0hima.fit)!=0){
+    ID_ms_L0[L0hima.fit[,1]]=1
+    me_est[L0hima.fit[,1]]=L0hima.fit[,2]*L0hima.fit[,3]
   }
   c(n,p,ID_true,A*B,0,ID_ms_L0,me_est,0)
 }
