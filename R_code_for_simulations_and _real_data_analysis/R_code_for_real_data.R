@@ -1,10 +1,6 @@
 #Code for the real data analysis
 
 #real_data_1_linear
-M_1<-read.xlsx("/Users/zhaosaijun/Desktop/DNA_real_data/M_1.xlsx")
-M_2<-read.xlsx("/Users/zhaosaijun/Desktop/DNA_real_data/M_2.xlsx")
-XYZ<-read.xlsx("/Users/zhaosaijun/Desktop/DNA_real_data/XY.xlsx")
-
 #M_1,M_2, and XYZ are the raw data
 #data preprocessing
 X<-XYZ[,5];Y<-XYZ[,4];Z1<-XYZ[,2];Z2<-XYZ[,3]
@@ -25,9 +21,6 @@ L0hima.fit_linear
 
 
 #real_data2
-data_raw_1<-read.table("/Users/zhaosaijun/Desktop/real data/HumanMethylation450")
-data_raw_2<-read.csv("/Users/zhaosaijun/Desktop/real data/clinical_754.csv")
-
 #data_raw_1 and data_raw_2 are the raw data
 #data preprocessing
 Tes<-function(P){
