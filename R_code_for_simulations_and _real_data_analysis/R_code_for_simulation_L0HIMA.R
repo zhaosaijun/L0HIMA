@@ -13,8 +13,6 @@ Sim_ms<-function(Q){
   # the first four markers are true mediators.
   A[1:6] <- c(0.45, 0.4, -0.35, -0.3, 0.0, 0.5)
   B[1:6] <- c(0.5, -0.45, 0.4, -0.35, 0.5,0.0)
-  # A[1:8] <- c(0.45, 0.4, -0.35, -0.3, 0.0,0, 0.5,-0.5)
-  # B[1:8] <- c(0.5, -0.45, 0.4, -0.35, 0.5,-0.5,0,0.0)
   rhoM<-0.0 #the correlation coefficient of random errors for M
   # Generate simulation data
   dat = simL0hima(n,p,q,family,A,B,rhoM,seed=1e3+Q)
