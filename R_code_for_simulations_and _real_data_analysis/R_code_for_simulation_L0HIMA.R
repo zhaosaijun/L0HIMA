@@ -3,7 +3,7 @@ library(L0HIMA)
 Sim_ms<-function(Q){
   set.seed(1e3+Q)
   n <- 100  # sample size
-  p <- 1000 # the dimension of mediators
+  p <- 100 # the dimension of mediators
   q <- 2 # the number of covariates
   family <- "gaussian"  #or "binomial","poisson", "cox","AFT" # the type of model 
   # the regression coefficients A (X --> M)
