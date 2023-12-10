@@ -1,3 +1,4 @@
+#Simulation code for HIMA with 1000 replications
 library(HIMA)
 Sim_ms<-function(Q){
   set.seed(1e3+Q)
