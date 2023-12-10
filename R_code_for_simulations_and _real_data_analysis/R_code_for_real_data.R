@@ -15,10 +15,23 @@ X<-scale(X,center = TRUE, scale = TRUE)
 Z<-scale(Z,center = TRUE, scale = TRUE)
 Y<-scale(Y,center = TRUE, scale = TRUE)
 
+#L0HIMA
 L0hima.fit_linear<-L0hima(X, M, Y, Z, Z, family="gaussian", test.type="JS-uniform",test.control="FDR",
                   sig.level=0.05,screening = TRUE, topN = 6*nrow(M))
 L0hima.fit_linear
 
+#HDMA
+HDMA.fit<-mediate_hdma(as.vector(X), M, as.vector(Y), Z, Z)
+HDMA.fit
+
+#HIMA
+HIMA.fit <-hima(X=as.matrix(X),Y=Y,M=M, Z, Z,
+                Y.family = "gaussian",M.family = "gaussian", penalty = "MCP",verbose = TRUE)
+HIMA.fit
+
+#HIMA2
+HIMA2.fit <-HIMA2(X=as.matrix(X),Y=Y,M=M,Z = Z)
+HIMA2.fit
 
 #real_data2
 #data_raw_1 and data_raw_2 are the raw data
@@ -47,6 +60,7 @@ Z_s[,3]<-scale(Z[,3],center = TRUE, scale = TRUE);Z_s[,4]<-scale(Z[,4],center = 
 X<-data_raw_2[,6];X<-scale(X,center = TRUE, scale = TRUE)
 Y[,1]<-scale(Y[,1],center =FALSE, scale = TRUE)
 
+#L0HIMA
 L0hima.fit_cox<-L0hima(X, M, Y, Z, Z, family="cox", test.type="JS-uniform",test.control="FDR",
                       sig.level=0.05,screening = TRUE, topN = 6*nrow(M))
 L0hima.fit_cox
@@ -55,3 +69,6 @@ L0hima.fit_AFT<-L0hima(X, M, Y, Z, Z, family="AFT", test.type="JS-uniform",test.
                  sig.level=0.05,screening = TRUE, topN = 6*nrow(M))
 L0hima.fit_AFT
 
+#HIMAS
+HIMAS.fit <- survHIMA(X, Z, M, Y[,1], Y[,2],FDRcut = 0.05,verbose = TRUE)
+HIMAS.fit
