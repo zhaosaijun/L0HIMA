@@ -135,5 +135,5 @@ colnames(RES)<-c("","truevalue","bias","root_mse","root_sd")
 R_hima_3<-RES
 #Results of FWER, PR, FNR, FPR, TNR, PPV, FOR, FDR, NPV, and F1_score
 R_hima_1
-##Estimation results of the mediation effects
+#Estimation results of the mediation effects
 R_hima_3[c(1:10,pnumber+1),c(2,3,4)]
