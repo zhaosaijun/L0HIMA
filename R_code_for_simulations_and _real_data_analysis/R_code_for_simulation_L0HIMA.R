@@ -5,7 +5,7 @@ Sim_ms<-function(Q){
   n <- 100  # sample size
   p <- 100 # the dimension of mediators
   q <- 2 # the number of covariates
-  family <- "gaussian"  #or "binomial","poisson", "cox","AFT" # the type of model 
+  family <- "gaussian"  #or "binomial", "poisson", "cox", and "AFT" # the type of model 
   # the regression coefficients A (X --> M)
   A<-rep(0,p)
   # the regression coefficients B (M --> Y)
