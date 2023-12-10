@@ -318,7 +318,7 @@ Sim_ms<-function(Q){
 }
 
 
-NUM<-100
+NUM<-1000
 t1<-Sys.time()
 library(parallel)
 clnum<-detectCores()
