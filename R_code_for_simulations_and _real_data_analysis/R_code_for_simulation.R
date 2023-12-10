@@ -1,4 +1,5 @@
-#Simulation code for 1000 replications
+#Simulation code for L0HIMA with 1000 replications
+library(L0HIMA)
 Sim_ms<-function(Q){
   set.seed(1e3+Q)
   n <- 100  # sample size
